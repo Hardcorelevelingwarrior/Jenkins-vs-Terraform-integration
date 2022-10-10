@@ -11,6 +11,16 @@ pipeline {
   }
 
   stages {
+    stage('Checkov'){
+      agent {
+        docker {
+            image 'kennethreitz/pipenv:latest'
+        }
+      }
+      steps {
+        sh 'checkov -f main.tf'
+      }
+    }
     stage('Init Provider') {
       steps {
         sh 'terraform init'
