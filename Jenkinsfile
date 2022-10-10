@@ -14,12 +14,11 @@ pipeline {
     stage('Checkov'){
       agent {
         docker {
-            image 'kennethreitz/pipenv:latest'
-          reuseNode = true
+            image 'tfsec/tfsec-ci:v0.57.1'
         }
       }
       steps {
-        sh 'checkov -f main.tf'
+        sh ''' tfsec --no-color '''
       }
     }
     stage('Init Provider') {
