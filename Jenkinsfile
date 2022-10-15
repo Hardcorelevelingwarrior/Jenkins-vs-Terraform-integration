@@ -9,7 +9,10 @@ pipeline {
     AWS_ACCESS_KEY_ID     = credentials('aws-secret-key-id')
     AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
   }
+
+  stages {
     stage('Init Provider') {
+      agent any 
       steps {
         sh 'terraform init'
       }
@@ -27,4 +30,5 @@ pipeline {
         sh 'terraform apply -auto-approve'
       }
     }
+  }
 }
