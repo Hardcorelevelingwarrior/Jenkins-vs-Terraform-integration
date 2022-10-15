@@ -14,7 +14,7 @@ pipeline {
     stage('Init Provider') {
       agent any 
       steps {
-        sh 'terraform init'
+        sh 'terraform init -upgrade'
       }
     }
     stage('Plan Resources') {
