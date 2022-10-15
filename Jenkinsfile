@@ -12,7 +12,7 @@ pipeline {
 
   stages {
     stage('Init Provider') {
-      agent any 
+      agent { label 'linux'}
       steps {
         sh 'terraform init -upgrade'
       }
