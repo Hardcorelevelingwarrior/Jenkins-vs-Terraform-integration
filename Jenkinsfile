@@ -11,7 +11,7 @@ pipeline {
   }
 
   stages {
-    stage('Checkov'){
+    stage('tfsec'){
       agent {
         docker {
             image 'tfsec/tfsec-ci:v0.57.1'
