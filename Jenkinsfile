@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    terraform 'Terraform'
+    terraform 'terraform'
   }
 
   environment {
@@ -12,9 +12,8 @@ pipeline {
 
   stages {
     stage('Init Provider') {
-      agent { label 'linux'}
       steps {
-        sh 'terraform init '
+        sh 'terraform init'
       }
     }
     stage('Plan Resources') {
@@ -27,7 +26,7 @@ pipeline {
         message "Do you want to proceed for production deployment?"
       }
       steps {
-        sh 'terraform apply -auto-approve -no-color'
+        sh 'terraform apply -auto-approve'
       }
     }
   }
