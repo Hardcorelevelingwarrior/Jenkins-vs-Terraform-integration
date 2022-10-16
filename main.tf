@@ -1,11 +1,11 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-series-meomeo-s3-backend"
+    bucket         = "terraform-series-meome-s3-backend"
     key            = "terraform-jenkins"
     region         = "us-west-2"
     encrypt        = true
-    role_arn       = "arn:aws:iam::682220946551:role/Terraform-Series-MeomeoS3BackendRole"
-    dynamodb_table = "terraform-series-meomeo-s3-backend"
+    role_arn       = "arn:aws:iam::682220946551:role/Terraform-Series-MeomeS3BackendRole"
+    dynamodb_table = "terraform-series-meome-s3-backend"
   }
 }
 
