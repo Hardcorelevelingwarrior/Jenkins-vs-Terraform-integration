@@ -17,10 +17,10 @@ pipeline {
             image 'tfsec/tfsec-ci:v0.57.1'
         }
       }
-    }
       steps {
         sh ''' tfsec --no-color '''
       }
+    }
     stage('Init Provider') {
       steps {
         sh 'terraform init'
